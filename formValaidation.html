@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validation</title>
+    <link rel="icon" href="https://static4.depositphotos.com/1011796/316/i/600/depositphotos_3163643-stock-photo-registered-symbol-in-glass-3d.jpg">
+
+    <!-- <link rel="stylesheet" href="
+    https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
+    <link rel="stylesheet" href="formvalidation.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">
+            <h2>Registration Form</h2>
+        </div>
+        <form action="" class="form" name="myForm">
+            <div class="control">
+                <label>User_name:</label>
+                <input type="text" name="username" placeholder="Input username" autocomplete="off"  >
+                
+                <small>Small error!</small>
+            </div>
+            <div class="control">
+                <label>Email:</label>
+                <input type="email" name="email" placeholder="Input email" >
+                
+                <small>Small error!</small>
+            </div>
+            <div class="control">
+                <label>Contact:</label>
+                <input type="phone" name="number" placeholder="Input phone number" >
+                
+                <small>Small error!</small>
+            </div>
+            <div class="control">
+                <label>Password:</label>
+                <input type="text" name="password" placeholder="Input password" >
+                
+                <small>Small error!</small>
+            </div>
+            
+            <div class="btn">
+                <input type="submit" onclick="validateForm()"  value="Submit">
+            </div>
+        </form>
+    </div>
+    <script>
+        function validateForm() {
+          let x = document.forms["myForm"]["username"].value;
+          if(x==""){
+            alert("name must be filled out");
+            return false;
+          }
+          else if (x.length<2 ) {
+            alert("more than 2 character");
+            return false;
+          }
+          let y = document.forms["myForm"]["password"].value;
+          if(y==""){
+            alert("Password must be filled out");
+            return false;
+          }
+          
+          else if (y.length<2 ) {
+            alert("more than 2 character");
+            return false;
+          }
+          
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>
